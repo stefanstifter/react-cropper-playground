@@ -12,7 +12,7 @@ const ImageResult = props => {
     }
 
     return (
-        <div className="mt-12">
+        <div>
             <div className="mb-6 flex justify-between">
                 <h3 className="text-lg font-bold">Result</h3>
                 {imageData && (

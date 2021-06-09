@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Divider from './Divider';
 import ImageResult from './ImageResult';
 import ImageCropper from './ImageCropper';
 import InputFileReader from './InputFileReader';
@@ -39,6 +40,9 @@ const CropperPlayground = props => {
             <ImageCropper
                 image={imageFile}
                 handleCroppedImage={setCroppedImage}
+            />
+            <Divider
+                title="fixed aspectRatio, wax-wdith: 1800px, viewMode: 0 (no restrictions)"
             />
             <ImageResult
                 image={croppedImage}
