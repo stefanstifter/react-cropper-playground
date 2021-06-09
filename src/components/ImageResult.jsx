@@ -25,11 +25,13 @@ const ImageResult = props => {
                 )}
             </div>
             {imageData && (
-                <img
-                    src={imageData}
-                    className="border rounded-sm"
-                    alt="Cropped Image Result"
-                />
+                <div className="flex justify-center">
+                    <img
+                        src={imageData}
+                        className="border rounded-sm"
+                        alt="Cropped Image Result"
+                    />
+                </div>
             )}
         </div>
     );
