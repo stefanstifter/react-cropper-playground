@@ -14,7 +14,7 @@ const ImageCropper = props => {
 
     useEffect(() => {
         if (croppedImage) {
-            console.log('cropped image', croppedImage);
+            props.handleCroppedImage(croppedImage);
         }
     }, [croppedImage]);
 
@@ -32,7 +32,7 @@ const ImageCropper = props => {
     }
 
     return (
-        <>
+        <div className="border rounded-sm">
             <Cropper
                 src={imageData}
                 crop={onCrop}
@@ -44,7 +44,7 @@ const ImageCropper = props => {
                 autoCropArea={1}
                 checkOrientation={false}
             />
-        </>
+        </div>
     )
 }
 

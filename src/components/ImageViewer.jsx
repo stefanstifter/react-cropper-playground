@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import ImageResult from './ImageResult';
 import ImageCropper from './ImageCropper';
 import InputFileReader from './InputFileReader';
 
 const ImageViewer = props => {
     const [ error, setError ] = useState('');
     const [ imageFile, setImageFile ] = useState(null);
+    const [ croppedImage, setCroppedImage ] = useState(null);
 
     function handleFileChange(file) {
         setError('');
@@ -36,6 +38,10 @@ const ImageViewer = props => {
             <div className="mt-4 text-red-500">{error}</div>
             <ImageCropper
                 image={imageFile}
+                handleCroppedImage={setCroppedImage}
+            />
+            <ImageResult
+                image={croppedImage}
             />
         </div>
     );

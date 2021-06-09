@@ -5,7 +5,7 @@ const CropperPlayground = props => {
     const [ imageFile, setImageFile ] = useState(null);
 
     return (
-        <div>
+        <div className="mb-12">
             <ImageViewer />
         </div>
     );
