@@ -4,8 +4,9 @@ const InputFileReader = props => {
     const [ file, setFile ] = useState(null);
 
     useEffect(() => {
-        console.log('file changed', file);
-
+        if (file) {
+            props.handleFileChange(file);
+        }
     }, [file]);
 
     function handleFileChange(event) {
@@ -19,8 +20,8 @@ const InputFileReader = props => {
                 data: reader.result,
                 name: file.name,
                 size: file.size,
+                type: file.type,
                 lastModified: file.lastModified,
-                type: null,
             });
         }
     }
