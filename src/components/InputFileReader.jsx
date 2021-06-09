@@ -28,7 +28,7 @@ const InputFileReader = props => {
     return (
         <div className="mt-6">
             <label htmlFor="image" className="block text-sm font-medium text-gray-700">
-                Image
+                Choose your image
             </label>
             <div className="mt-1">
                 <input
