@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ImageCroper from './ImageCroper';
 import InputFileReader from './InputFileReader';
 
 const ImageViewer = props => {
@@ -11,8 +12,7 @@ const ImageViewer = props => {
         if (!type) {
             setError('Choose a valid image file! Allowed file types: .jpg, .jpeg, .png');
         }
-
-        console.log('everything fine so far', {type, file});
+        setImageFile(file);
     }
 
     /**
@@ -34,6 +34,9 @@ const ImageViewer = props => {
                 handleFileChange={handleFileChange}
             />
             <div className="mt-4 text-red-500">{error}</div>
+            <ImageCroper
+                image={imageFile}
+            />
         </div>
     );
 }
