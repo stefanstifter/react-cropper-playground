@@ -1,22 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Cropper from "react-cropper";
 import "cropperjs/dist/cropper.css";
 
 const ImageCropper = props => {
-    console.log('im the cropper', {props});
+    const [ imageData, setImageData ] = useState(null);
+
+    useEffect(() => {
+        if (props.image && props.image?.data) {
+            setImageData(props.image.data);
+        }
+    }, [props.image])
+
     return (
-        <div>
-            <p>I'm the cropper</p>
+        <>
             <Cropper
-                src="https://raw.githubusercontent.com/roadmanfong/react-cropper/master/example/img/child.jpg"
-                // style={{ height: 400, width: "100%" }}
-                // Cropper.js options
-                initialAspectRatio={16 / 9}
-                guides={false}
+                src={imageData}
+                // ref={cropper}
+                // src={src}
                 // crop={onCrop}
-                // ref={cropperRef}
+                // ready={setInitialCropBox}
+                // Cropper.js options
+                aspectRatio={1.41822 / 1}
+                style={{ height: 500, width: '100%' }}
+                guides={true}
+                autoCropArea={1}
+                checkOrientation={false}
             />
-        </div>
+        </>
     )
 }
 
