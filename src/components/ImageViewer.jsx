@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ImageCroper from './ImageCroper';
+import ImageCropper from './ImageCropper';
 import InputFileReader from './InputFileReader';
 
 const ImageViewer = props => {
@@ -34,7 +34,7 @@ const ImageViewer = props => {
                 handleFileChange={handleFileChange}
             />
             <div className="mt-4 text-red-500">{error}</div>
-            <ImageCroper
+            <ImageCropper
                 image={imageFile}
             />
         </div>

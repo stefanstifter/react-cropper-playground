@@ -2,7 +2,7 @@ import React from 'react';
 import Cropper from "react-cropper";
 import "cropperjs/dist/cropper.css";
 
-const ImageCroper = props => {
+const ImageCropper = props => {
     console.log('im the cropper', {props});
     return (
         <div>
@@ -20,4 +20,4 @@ const ImageCroper = props => {
     )
 }
 
-export default ImageCroper;
+export default ImageCropper;

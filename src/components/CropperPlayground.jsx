@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ImageViewer from './ImageViewer';
 
-const CroperPlayground = props => {
+const CropperPlayground = props => {
     const [ imageFile, setImageFile ] = useState(null);
 
     return (
@@ -11,4 +11,4 @@ const CroperPlayground = props => {
     );
 }
 
-export default CroperPlayground;
+export default CropperPlayground;
