@@ -4,21 +4,39 @@ import "cropperjs/dist/cropper.css";
 
 const ImageCropper = props => {
     const [ imageData, setImageData ] = useState(null);
+    const [ croppedImage, setCroppedImage ] = useState(null);
 
     useEffect(() => {
         if (props.image && props.image?.data) {
             setImageData(props.image.data);
         }
-    }, [props.image])
+    }, [props.image]);
+
+    useEffect(() => {
+        if (croppedImage) {
+            console.log('cropped image', croppedImage);
+        }
+    }, [croppedImage]);
+
+    // Get cropped image as png
+    function onCrop(event) {
+        const cropper = event.target.cropper;
+        const croppedImageData = cropper.getCroppedCanvas({
+            maxWidth: 1800,
+        }).toDataURL('image/png');
+
+        setCroppedImage({
+            ...props.image,
+            data: croppedImageData
+        });
+    }
 
     return (
         <>
             <Cropper
                 src={imageData}
-                // ref={cropper}
-                // src={src}
-                // crop={onCrop}
-                // ready={setInitialCropBox}
+                crop={onCrop}
+
                 // Cropper.js options
                 aspectRatio={1.41822 / 1}
                 style={{ height: 500, width: '100%' }}
