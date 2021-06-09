@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Cropper from "react-cropper";
 import "cropperjs/dist/cropper.css";
 import CropperControls from './CropperControls';
 
 const ImageCropper = props => {
+    const cropperEl = useRef(null);
     const [ imageData, setImageData ] = useState(null);
     const [ croppedImage, setCroppedImage ] = useState(null);
 
@@ -37,6 +38,7 @@ const ImageCropper = props => {
             <Cropper
                 src={imageData}
                 crop={onCrop}
+                ref={cropperEl}
 
                 // Cropper.js options
                 aspectRatio={1.41822 / 1}
@@ -45,7 +47,9 @@ const ImageCropper = props => {
                 autoCropArea={1}
                 checkOrientation={false}
             />
-            <CropperControls />
+            <CropperControls
+                cropper={cropperEl}
+            />
         </div>
     )
 }

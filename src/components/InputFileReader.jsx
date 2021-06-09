@@ -36,6 +36,7 @@ const InputFileReader = props => {
                     onChange={handleFileChange}
                     type="file"
                     name="image"
+                    accept=".jpg, .jpeg, .png"
                 />
             </div>
         </div>
