@@ -5,7 +5,10 @@ const ImageResult = props => {
     const imageData = props.image?.data ?? null;
 
     function handlePersistClick() {
-        alert('okay, persisting')
+        const a = document.createElement('a');
+        a.href = imageData;
+        a.download = 'cropped.png';
+        a.click();
     }
 
     return (
