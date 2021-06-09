@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Cropper from "react-cropper";
 import "cropperjs/dist/cropper.css";
+import CropperControls from './CropperControls';
 
 const ImageCropper = props => {
     const [ imageData, setImageData ] = useState(null);
@@ -44,6 +45,7 @@ const ImageCropper = props => {
                 autoCropArea={1}
                 checkOrientation={false}
             />
+            <CropperControls />
         </div>
     )
 }
