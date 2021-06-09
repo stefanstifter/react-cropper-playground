@@ -1,4 +1,5 @@
 import React from 'react'
+import CroperPlayground from './components/CroperPlayground'
 
 function App() {
   return (
@@ -7,6 +8,9 @@ function App() {
           <h1 className="text-2xl font-bold">React Cropper Playground</h1>
           <p>Test a cropper</p>
       </header>
+
+      <CroperPlayground />
+
     </div>
   )
 }
