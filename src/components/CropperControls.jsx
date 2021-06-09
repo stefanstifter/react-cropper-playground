@@ -22,7 +22,7 @@ const CropperControls = props => {
                 left
             </Button>
             <Button
-                onClick={() => cropperRotate(10)}
+                onClick={() => cropper.rotate(-10)}
             >
                 right
             </Button>
