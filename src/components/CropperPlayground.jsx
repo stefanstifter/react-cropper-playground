@@ -32,7 +32,7 @@ const CropperPlayground = props => {
     }
 
     return (
-        <div className="mb-12">
+        <div className="mb-36">
             <InputFileReader
                 handleFileChange={handleFileChange}
             />

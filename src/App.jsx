@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from './components/Footer'
 import CropperPlayground from './components/CropperPlayground'
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
       </header>
 
       <CropperPlayground />
-
+      <Footer />
     </div>
   )
 }

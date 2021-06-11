@@ -2,7 +2,7 @@
 
 Basic react cropper playground app. Isolates react cropper behaviour. Try out's, examples and experiments.
 
-[Demo here](http://cropper.saswebdev.com/)
+[Check out the demo here](http://cropper.saswebdev.com/)
 
 ## Local Dev
   - `npm install`
